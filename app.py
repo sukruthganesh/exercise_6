@@ -50,6 +50,7 @@ def new_user():
 @app.route('/profile')
 @app.route('/login')
 @app.route('/room')
+@app.route('/room/<chat_id>')
 def index(chat_id=None):
     return app.send_static_file('index.html')
 
