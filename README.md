@@ -2,7 +2,7 @@
 
 10 points
 
-**DUE: Friday, May 5 by 5:30pm**
+**DUE: Friday, February 16 by 5:00pm**
 
 ### Instructions
 
@@ -23,10 +23,9 @@ serve the static content are provided, so you will only need to implement the
 API endpoints in `app.py` and the javascript in `script.js`. You are however
 free to modify any other file if it makes development more convenient.
 
-You may re-use any code form your Exercise 5, and if you haven't finished
-Exercise 5 yet, note that a complete submission on Exercise 6 will also satisfy
-all the requirements of 5. Remember to include in your submission any classmates
-you collaborated with and any materials you consulted.
+You may re-use any code form your Exercise 5. Remember to include in the README
+of your submission any classmates you collaborated with and any materials you 
+consulted.
 
 ### Rubric
 
