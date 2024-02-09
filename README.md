@@ -23,7 +23,7 @@ serve the static content are provided, so you will only need to implement the
 API endpoints in `app.py` and the javascript in `script.js`. You are however
 free to modify any other file if it makes development more convenient.
 
-You may re-use any code form your Exercise 5. Remember to include in the README
+You may re-use any code from your Exercise 5. Remember to include in the README
 of your submission any classmates you collaborated with and any materials you 
 consulted.
 
