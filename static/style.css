@@ -419,3 +419,7 @@ h3 {
   margin-left: 100px;
   text-shadow: 0 0 6px white;
 }
+
+.hide {
+  display: none;
+}
