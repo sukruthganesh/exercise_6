@@ -5,53 +5,26 @@ const LOGIN = document.querySelector(".login");
 const ROOM = document.querySelector(".room");
 
 // Custom validation on the password reset fields
-const repeatPassword = document.querySelector(
-  ".profile input[name=repeatPassword]"
-);
+const passwordField = document.querySelector(".profile input[name=password]");
+const repeatPasswordField = document.querySelector(".profile input[name=repeatPassword]");
 const repeatPasswordMatches = () => {
-  const p = document.querySelector(".profile input[name=password").value;
+  const p = document.querySelector(".profile input[name=password]").value;
   const r = repeatPassword.value;
   return p == r;
 };
-repeatPassword.addEventListener("input", (event) => {
-  if (repeatPasswordMatches()) {
-    repeatPassword.setCustomValidity("");
+
+const checkPasswordRepeat = () => {
+  const passwordField = document.querySelector(".profile input[name=password]");
+  if(passwordField.value == repeatPasswordField.value) {
+    repeatPasswordField.setCustomValidity("");
+    return;
   } else {
-    repeatPassword.setCustomValidity("Password doesn't match");
+    repeatPasswordField.setCustomValidity("Password doesn't match");
   }
-});
+}
 
-const showOnly = (element) => {
-  console.debug("showOnly");
-  SPLASH.style.display = "none";
-  PROFILE.style.display = "none";
-  LOGIN.style.display = "none";
-  ROOM.style.display = "none";
-  element.style.display = "block";
-};
-
-const router = () => {
-  const path = window.location.pathname;
-  console.log(`routing to "${path}"...`);
-
-  //TODO: condition on whether the user has credentials
-  switch (true) {
-    case path == "/":
-      showOnly(SPLASH);
-      break;
-    case path == "/login":
-      showOnly(LOGIN);
-      break;
-    case path == "/profile":
-      showOnly(PROFILE);
-      break;
-    case /room\/\d+/.test(path):
-      showOnly(ROOM);
-      break;
-    default:
-      console.log("no match");
-  }
-};
+passwordField.addEventListener("input", checkPasswordRepeat);
+repeatPasswordField.addEventListener("input", checkPasswordRepeat);
 
 // TODO:  On page load, read the path and whether the user has valid credentials:
 //        - If they ask for the splash page ("/"), display it
@@ -80,4 +53,3 @@ const router = () => {
 //        (Hint: https://developer.mozilla.org/en-US/docs/Web/API/setInterval#return_value)
 
 // On page load, show the appropriate page and hide the others
-router();
